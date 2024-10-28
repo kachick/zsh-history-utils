@@ -32,6 +32,9 @@ pub enum Commands {
     /// Merge multiple history files into a single history file
     #[clap(arg_required_else_help = true)]
     Merge {
+        #[arg(long, help = "Include the entry only if this command exits with 0")]
+        filter: Option<PathBuf>,
+
         #[clap(required = true, value_parser)]
         path: Vec<PathBuf>,
     },
