@@ -20,8 +20,8 @@ fn main() -> Result<()> {
         Commands::Encode { path } => {
             command::encode::run(path)?;
         }
-        Commands::Merge { path } => {
-            command::merge::run(path)?;
+        Commands::Merge { path, filter } => {
+            command::merge::run(path, filter)?;
         }
     }
 
